@@ -24,10 +24,159 @@ Ukay is an e-commerce platform that lets you buy and sell used items relation to
  - [ ]  A user should be able only to buy an item if she / he has complete user details (Mobile number, First name, Last name, and Delivery address).
  - [ ] A push notification should arrive to the buyer of an item if the item delivery status was updated.
  - [ ]  A push notification should arrive to the buyer & seller if a chat was received.
-
+ - [ ] A seller account cannot be made into a buyer account. The buying and selling power must be separated from each other using different accounts.
+ 
  
 ### Non Functional Requirements
  - [ ] Users or specifically buyers must have a real time experience for using the chat service and determining the number of stocks of an item with minimum latency.
  - [ ] Chat message data & number of stocks should be consistent for every user on all devices.
+ - [ ] A seller must be a verified store that has the complete requirements by the state
 
-## High Level Design 
+## Application Interface Definition
+I considered splitting up this application into different services or a Microservice architecture. I plan to have a set of services for different business purposes. These are the services that I thought of:
+
+ - **Authentication Service**:
+ 
+Handles, of course, the authentication purposes for our application. So what authentication strategy should we use? I chose JSON Web Token (JWT) for this scenario. All different services should share the same JWT Secret.
+
+***APIs:***
+
+    enter(authprovider, userdata)
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| authprovider| String| null|
+| userdata| Object| null|
+| role |  Integer (FK) | null
+
+> The enter API is a generic API that ***can be used if the user is already registered or not.*** If the user is already registered, just return a valid JWT to the user. If not, register the user using the userdata that has been passed from the client.
+
+***Returns:***
+JSON Web Token with a specified expiration that can be stored inside the client side.
+
+    { msg: jwt , status : 1 }
+
+***How do we know if the user is already registered to the application?***
+> OAuth or 3rd party authentication services should be able to return their respective ids For example Google, Google should be able to return the Google ID of the user who used the OAuth service. The Google ID will be stored inside our database for verification purposes.
+
+***How do  I know what data will I extract inside the userdata object?***
+> From the client side we shall pass a parameter, lets say ***authprovider***. That parameter stores a value like 'Google' or 'Facebook' and dictates the API what properties we shall extract.
+
+ - **Products Service:**
+
+Handles most of the business logic regarding products. This service requires an authentication (JWT).
+
+***APIs:***
+
+    getFeaturedProducts (skip, limit)
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| skip| Integer| null|
+| limit| Integer| 5|
+
+> Get the list of featured products that shall be displayed at the home page of our shop.
+
+***Returns:***
+
+    [
+	    {
+		    productname : "GUCCI Bag",
+		    producttag: `gucci-bag`,
+		     category: {
+			    categoryname : `Bags`,
+			    categoryimage : `https://google.com/bag1.png`
+		    },
+		    averating : 4.9,
+		    noofreviews: 129,
+		    price: 15490,
+		    desc: `Hello world`,
+		    saleprice: 10200,
+		    percentoff: 5,
+		    mainphoto: `https://google.com/img1.png`
+	    }
+    ]
+
+***What products should we display at this API?***
+> Products that are the most rated / most reviewed.
+---
+
+    getProduct (producttag)
+    
+   > Just basically gets all the information regarding the product.
+
+***Returns***
+
+  
+	{
+		    productname : "GUCCI Bag",
+		    producttag: `gucci-bag`,
+		    category: {
+			    categoryname : `Bags`,
+			    categoryimage : `https://google.com/bag1.png`
+		    },
+		    averating : 4.9,
+		    noofreviews: 129,
+		    price: 15490,
+		    desc: `Hello world`,
+		    saleprice: 10200,
+		    percentoff: 5,
+		    stocks: 10,
+		    variations: [
+			    {
+				    productname: "GUCCI Bag Red",
+				    photos: [
+				      `https://google.com/image1.png`,
+					  `https://google.com/img2.jpg`
+				    ],
+				    sizes: [
+					    {
+						  sizename: `Medium`,
+						  sizecode: `M`,
+						  stocks: 5
+					    },
+					    {
+						  sizename: `Large`,
+						  sizecode: `L`,
+						  stocks: 5
+					    }
+					],
+		    ],
+		    instock: true,
+		    seller: {
+			    sellername: `GUCCI`,
+			    rating: 4.1,
+			    sellertag : `gucci`
+		    },
+		    photos: [
+			    `https://google.com/image1.png`,
+			    `https://google.com/img2.jpg`
+		    ]
+	}
+    
+		 
+---
+
+    getFeaturedCategories (skip, limit)
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| skip| Integer| null|
+| limit| Integer| 10|
+
+> Get the list of featured categories that shall be displayed at the home page of our shop.
+
+***Returns***
+
+    [
+	    {
+		    categoryname: `Bags`,
+		    categorytag: `bags`,
+		    categoryimage: `https://google.com/bag1.jpg`
+	    },
+	    {
+		    categoryname: `Shoes`,
+		    categorytag: `shoes`,
+		    categoryimage: `https://google.com/shoes1.png`
+	    }
+    ]
+
+***What categories should we display at this API?***
+>  Categories that have the most product reviews and stars / ratings under it.
