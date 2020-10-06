@@ -61,9 +61,9 @@ JSON Web Token with a specified expiration that can be stored inside the client 
 ***How do  I know what data will I extract inside the userdata object?***
 > From the client side we shall pass a parameter, lets say ***authprovider***. That parameter stores a value like 'Google' or 'Facebook' and dictates the API what properties we shall extract.
 
- - **Products Service:**
+ - **Shop Service:**
 
-Handles most of the business logic regarding products. This service requires an authentication (JWT).
+Handles most of the business logic regarding products, brands, categories. This service requires an authentication (JWT).
 
 ***APIs:***
 
@@ -79,6 +79,7 @@ Handles most of the business logic regarding products. This service requires an 
 
     [
 	    {
+		    brand : 'Gucci',
 		    productname : "GUCCI Bag",
 		    producttag: `gucci-bag`,
 		     category: {
@@ -107,14 +108,24 @@ Handles most of the business logic regarding products. This service requires an 
 
   
 	{
+			brand: 'Gucci',
 		    productname : "GUCCI Bag",
 		    producttag: `gucci-bag`,
 		    category: {
 			    categoryname : `Bags`,
 			    categoryimage : `https://google.com/bag1.png`
 		    },
-		    averating : 4.9,
-		    noofreviews: 129,
+		    reviewrating: {
+			    noofreviews: 101,
+			    averating: 4.2,
+			    ratingbreakdown: {
+				    5star: 2,
+				    4star: 9,
+				    3star: 4,
+				    2star: 20,
+				    1star: 101
+			    }
+		    },
 		    price: 15490,
 		    desc: `Hello world`,
 		    saleprice: 10200,
@@ -180,3 +191,60 @@ Handles most of the business logic regarding products. This service requires an 
 
 ***What categories should we display at this API?***
 >  Categories that have the most product reviews and stars / ratings under it.
+
+---
+
+    getProductReviews (producttag, limit, skip, sort, filter)
+> Gets a paginted product reviews of a specified product using the producttag.
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| skip| Integer| null|
+| limit| Integer| 10|
+| sort| String| `sort/high-low`|
+| filter| Integer| `filter/reviews/all-star`|
+
+***Returns***
+
+    {
+	    totalitems: 10,
+	    perpage: 5,
+	    noofpages: 5,
+	    firstpage: 1,
+	    lastpage: 5,
+	    currpage: 3,
+	    items: [
+		    {
+			    sender: `John D` <LAST NAME IS HIDDEN>,
+			    photos: [
+				    `https://google.com/r1.jpg`,
+				    `https://google.com/r2.jpg
+			    ],
+			    rating: 3,
+			    datecreated: 2010/10/23
+		    },
+		    {
+			    sender: `Mary A` <LAST NAME IS HIDDEN>,
+			    photos: [
+				    `https://google.com/r1.jpg`,
+				    `https://google.com/r2.jpg
+			    ],
+			    rating: 5,
+			    datecreated: 2010/10/23
+		    }
+	    ]
+    }
+
+***What sort types and filter types should we accept at this API?***
+>  Sort : `sort/high-low`, `sort/low-high`, `sort/latest`
+> Filter: `filter/reviews/all-star`, `filter/reviews/5-star` to `filter/reviews/1-star`
+
+---
+
+    getBrands (limit, skip)
+> Gets all the brands.
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| skip| Integer| null|
+| limit| Integer| null|
