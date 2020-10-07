@@ -331,3 +331,65 @@ Handles most of the business logic regarding products, brands, categories. This 
 	    }
     ]
     }
+
+---
+
+    addProductToCart(productid, buyerid, quantity)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| productid| Integer| null|
+| buyerid| Integer| null|
+| quantity| String| null|
+
+***Returns***
+
+    {status : 1 [Success]}
+    {status : 0 [Failed]}
+
+---
+    removeProductToCart(productid, buyerid, quantity)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| productid| Integer| null|
+| buyerid| Integer| null|
+| quantity| String| null|
+
+***Returns***
+
+    {status : 1 [Success]}
+    {status : 0 [Failed]}
+
+---
+
+    getProductsFromCart (buyerid)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| buyerid| Integer| null|
+
+***Returns***
+
+    [
+	    {
+		    quantity: 10,
+		    brand : 'Gucci',
+		    productname : "GUCCI Bag",
+		    producttag: `gucci-bag`,
+		    price: 15490,
+		    saleprice: 10200,
+		    percentoff: 5,
+		    mainphoto: `https://google.com/img1.png`,
+		    seller: {
+			    sellername: `GUCCI`,
+			    sellertag : `gucci`,
+			    location: `Laguna`
+		    }
+	    }
+    ]
+
+---
+
+ - **Buyer Service**
+
