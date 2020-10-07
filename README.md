@@ -299,7 +299,14 @@ Handles most of the business logic regarding products, brands, categories. This 
 
 ***Returns:***
 
-    [
+    {
+	    totalitems: 10,
+	    perpage: 5,
+	    noofpages: 5,
+	    firstpage: 1,
+	    lastpage: 5,
+	    currpage: 3,
+	    items: [
 	    {
 		    brand : 'Gucci',
 		    productname : "GUCCI Bag",
@@ -323,3 +330,4 @@ Handles most of the business logic regarding products, brands, categories. This 
 		    }
 	    }
     ]
+    }
