@@ -92,7 +92,13 @@ Handles most of the business logic regarding products, brands, categories. This 
 		    desc: `Hello world`,
 		    saleprice: 10200,
 		    percentoff: 5,
-		    mainphoto: `https://google.com/img1.png`
+		    mainphoto: `https://google.com/img1.png`,
+		    seller: {
+			    sellername: `GUCCI`,
+			    rating: 4.1,
+			    sellertag : `gucci`,
+			    location: `Laguna`
+		    },
 	    }
     ]
 
@@ -270,4 +276,50 @@ Handles most of the business logic regarding products, brands, categories. This 
     ]
 ---
 
-    getProducts (name, category, size, brand, color, sortby, pricestart, priceend)
+    getProducts (name, category, size, brand, color, sortby, pricestart, priceend, limit, skip)
+
+> Main API for searching for products. Supports filters like ***size, brand, color, and price.***
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| skip| Integer| null|
+| limit| Integer| 10|
+| name| String| null|
+| category| Integer| null|
+| size| Integer| null|
+| brand| Integer| null|
+| color| Integer| null|
+| sortby| String| `sort/low-high`|
+| pricestart| Float| null|
+| priceend| Float| null|
+
+
+***What sort types should we accept at this API?***
+>  Sort : `sort/high-low`, `sort/low-high`, `sort/latest`
+
+***Returns:***
+
+    [
+	    {
+		    brand : 'Gucci',
+		    productname : "GUCCI Bag",
+		    producttag: `gucci-bag`,
+		    category: {
+			    categoryname : `Bags`,
+			    categoryimage : `https://google.com/bag1.png`
+		    },
+		    averating : 4.9,
+		    noofreviews: 129,
+		    price: 15490,
+		    desc: `Hello world`,
+		    saleprice: 10200,
+		    percentoff: 5,
+		    mainphoto: `https://google.com/img1.png`,
+		    seller: {
+			    sellername: `GUCCI`,
+			    rating: 4.1,
+			    sellertag : `gucci`,
+			    location: `Laguna`
+		    }
+	    }
+    ]
