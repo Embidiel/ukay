@@ -1,4 +1,4 @@
-# Ukay
+# Ukay (Buyer App)
 
 
 ## What?
@@ -82,7 +82,7 @@ Handles most of the business logic regarding products, brands, categories. This 
 		    brand : 'Gucci',
 		    productname : "GUCCI Bag",
 		    producttag: `gucci-bag`,
-		     category: {
+		    category: {
 			    categoryname : `Bags`,
 			    categoryimage : `https://google.com/bag1.png`
 		    },
@@ -111,6 +111,12 @@ Handles most of the business logic regarding products, brands, categories. This 
 			brand: 'Gucci',
 		    productname : "GUCCI Bag",
 		    producttag: `gucci-bag`,
+		    return: 7,
+		    warranty : 10,
+		    color : {
+			    colorname: `Red`,
+			    shadehex: `#FF0000`
+			},
 		    category: {
 			    categoryname : `Bags`,
 			    categoryimage : `https://google.com/bag1.png`
@@ -155,7 +161,8 @@ Handles most of the business logic regarding products, brands, categories. This 
 		    seller: {
 			    sellername: `GUCCI`,
 			    rating: 4.1,
-			    sellertag : `gucci`
+			    sellertag : `gucci`,
+			    location: `Laguna`
 		    },
 		    photos: [
 			    `https://google.com/image1.png`,
@@ -195,7 +202,7 @@ Handles most of the business logic regarding products, brands, categories. This 
 ---
 
     getProductReviews (producttag, limit, skip, sort, filter)
-> Gets a paginted product reviews of a specified product using the producttag.
+> Gets a paginated product reviews of a specified product using the ***producttag***.
 
 |Paramname  | Data Type | Default Value
 |--|--|--|
@@ -248,3 +255,19 @@ Handles most of the business logic regarding products, brands, categories. This 
 |--|--|--|
 | skip| Integer| null|
 | limit| Integer| null|
+
+***Returns***
+
+    [
+	    {
+		    brandname : `Adidas`,
+		    brandtag : `adidas`
+	    },
+	    {
+		    brandname : `Nike`,
+		    brandtag : `nike`
+	    }
+    ]
+---
+
+    getProducts (name, category, size, brand, color, sortby, pricestart, priceend)
