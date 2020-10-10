@@ -41,7 +41,22 @@ Handles, of course, the authentication purposes for our application. So what aut
 
 ***APIs:***
 
+    verifyContactNumber (contactnumber)
+> API to verify if the number is a legit Philippine phone number to save time for potential bogus buyers lol.
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| contactnumber| String| null|
+
+***Returns***
+
+    {status : 1 [Success]}
+    {status : 0 [Failed]}
+
+---
+
     enter(authprovider, userdata)
+    
 |Paramname  | Data Type | Default Value
 |--|--|--|
 | authprovider| String| null|
