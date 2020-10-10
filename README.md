@@ -393,3 +393,80 @@ Handles most of the business logic regarding products, brands, categories. This 
 
  - **Buyer Service**
 
+Gets all information related to the buyer.
+
+***APIs***
+
+    getPaidOrders (limit, skip)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| skip| Integer| null|
+| limit| Integer| 10|
+
+***Returns***
+
+    [
+	    {
+		    receiptid: `abc123`,
+		    dateofpurchase: `2010-10-20`,
+		    receiptlink: `https://s3.receipts/receipt1.pdf`
+		    amount: 1000
+		    productspurchased: [
+			    {
+				    productname: `GUCCI Bag`,
+				    producttag : `gucci-bag`,
+				    quantity: 10,
+				    mainphoto: `https://google.com/img1.png`,
+				    totalamount: 1000
+			    }
+		    ]
+	    }
+    ]
+---
+
+    getBuyerInfo (buyerid)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| buyerid| String| null|
+
+***What is a buyerid?***
+
+> Unique identifier / ObjectID for a Mongodb database.
+
+***Returns***
+
+    {
+	    firstname: `John`,
+	    lastname: `Doe`,
+	    birthdate: `10-20-2020`,
+	    age: 10,
+	    contactnumber: `0929188181`
+	    address: {
+		    addressline1:
+		    city:
+		    housenumber:
+	    }
+    }
+
+---
+
+    editBuyerInfo (buyerid, firstname, lastname, birthday, contactnumber, address)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| buyerid| String| null|
+| firstname| String| null|
+| lastname| String| null|
+| birthdate| String| null|
+| contactnumber| String| null|
+| address| Object| null|
+
+
+***Returns***
+
+    {status : 1 [Success]}
+    {status : 0 [Failed]}
+
+
