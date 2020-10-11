@@ -32,10 +32,12 @@ Ukay is an e-commerce platform that lets you buy and sell used items relation to
  - [ ] Chat message data & number of stocks should be consistent for every user on all devices.
  - [ ] A seller must be a verified store that has the complete requirements by the state
 
+## Data Model  Definition
+
 ## Application Interface Definition
 I considered splitting up this application into different services or a Microservice architecture. I plan to have a set of services for different business purposes. These are the services that I thought of:
 
- - **Authentication Service**:
+ ### Authentication Service
  
 Handles, of course, the authentication purposes for our application. So what authentication strategy should we use? I chose JSON Web Token (JWT) for this scenario. All different services should share the same JWT Secret.
 
@@ -406,7 +408,7 @@ Handles most of the business logic regarding products, brands, categories. This 
 
 ---
 
- - **Buyer Service**
+ ### Buyer Service
 
 Gets all information related to the buyer.
 
@@ -424,9 +426,9 @@ Gets all information related to the buyer.
     [
 	    {
 		    receiptid: `abc123`,
-		    dateofpurchase: `2010-10-20`,
+		    datetimepurchased: `2010-10-20`,
 		    receiptlink: `https://s3.receipts/receipt1.pdf`
-		    amount: 1000
+		    totalamount: 1000
 		    productspurchased: [
 			    {
 				    productname: `GUCCI Bag`,
@@ -467,7 +469,7 @@ Gets all information related to the buyer.
 
 ---
 
-    editBuyerInfo (buyerid, firstname, lastname, birthday, contactnumber, address)
+    editBuyerInfo (buyerid, firstname, lastname, birthday, contactnumber, datetimepurchased, address)
 
 |Paramname  | Data Type | Default Value
 |--|--|--|
@@ -483,5 +485,30 @@ Gets all information related to the buyer.
 
     {status : 1 [Success]}
     {status : 0 [Failed]}
+
+---
+
+### Payment Service
+
+    makeOrdersPayment (productspurchased, totalamount, buyerid, paymentprocessorinfo)
+
+|Paramname  | Data Type | Default Value
+|--|--|--|
+| buyerid| String| null|
+| totalamount| Float| null|
+| productspurchased| Array of Objects| null|
+| paymentprocessorinfo| Object| null|
+
+***`productspurchased` Object Structure***
+
+    {
+	    productid: 1,
+	    productname: `GUCCI Bag`,
+	    producttag: 'gucci-bag',
+	    mainphoto: `https://google.com/pic1.png`,
+	    quantity: 10,
+	    totalamount: 10000
+    }
+
 
 
