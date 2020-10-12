@@ -33,7 +33,36 @@ Ukay is an e-commerce platform that lets you buy and sell used items relation to
  - [ ] A seller must be a verified store that has the complete requirements by the state
 
 ## Data Model  Definition
-![enter image description here](https://imgur.com/IxtRfUR.png)
+
+![enter image description here](https://imgur.com/hGKt5nw.png)
+
+> There are 4 primary databases that I shall use in this buyer application. 3 MongoDB Databases and 1 SQL Database. Each database that are shown here shall have a service or a set of services that consumes data from them.
+
+***Why did you choose these data model structure?***
+
+***First reason is to avoid a tightly coupled database***. A tightly coupled database is hard to maintain, as the data set grows larger, the more data you need to manage. 
+
+***Second reason is to establish a domain or a set of business rules within these databases***.  A set of services that caters sa specific business domain shall be partnered with one of these databases.
+
+If you noticed, I used a SQL Database for managing the Products, Categories, Cart, and Brands. This is ***to avoid having too much lookups or joins if I used a MongoDB Database***. Reads are more expensive than writes in MongoDB.
+
+### Collection  Structure
+---
+***Buyer***
+|Property Name| Data Type | Default Value
+|--|--|--|
+| firstname| String| null|
+| lastname| String| null|
+| middlename| String| null|
+| permanentaddress| Object| null|
+| currentaddress| Object| null|
+| isactive| Boolean| true|
+| password| String | null|
+| datecreated| Date| null|
+| birthdate| Date| null|
+| emailaddress| String| null|
+| mainphotourl| String| null|
+
 
 ## Application Interface Definition
 I considered splitting up this application into different services or a Microservice architecture. I plan to have a set of services for different business purposes. These are the services that I thought of:
