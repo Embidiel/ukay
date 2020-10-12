@@ -33,6 +33,7 @@ Ukay is an e-commerce platform that lets you buy and sell used items relation to
  - [ ] A seller must be a verified store that has the complete requirements by the state
 
 ## Data Model  Definition
+![enter image description here](https://imgur.com/IxtRfUR.png)
 
 ## Application Interface Definition
 I considered splitting up this application into different services or a Microservice architecture. I plan to have a set of services for different business purposes. These are the services that I thought of:
