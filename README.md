@@ -81,6 +81,19 @@ If you noticed, I used a SQL Database for managing the Products, Categories, Car
 | totalamount| Float| null|
 | productspurchased| Array of Objects| null|
 
+***Payments***
+|Property Name| Data Type | Default Value
+|--|--|--|
+| paymentid| ObjectID| null|
+| buyerid| ObjectID| null|
+| seller| Object| null|
+| totalamount| Float| null|
+| productpurchased| Object| null|
+| paymentgateway| String| null|
+| paymentscheme| String| null|
+| payoutstatus| String| null|
+| status| String| null|
+| raw| Object| null|
 
 
 ## Application Interface Definition
