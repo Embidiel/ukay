@@ -51,6 +51,7 @@ If you noticed, I used a SQL Database for managing the Products, Categories, Car
 ***Buyer***
 |Property Name| Data Type | Default Value
 |--|--|--|
+| buyerid| ObjectID| null|
 | firstname| String| null|
 | lastname| String| null|
 | middlename| String| null|
@@ -61,7 +62,25 @@ If you noticed, I used a SQL Database for managing the Products, Categories, Car
 | datecreated| Date| null|
 | birthdate| Date| null|
 | emailaddress| String| null|
+| contactnumber| String| null|
 | mainphotourl| String| null|
+
+***Settings***
+|Property Name| Data Type | Default Value
+|--|--|--|
+| settingid| ObjectID| null|
+| userid| ObjectID| null|
+| istwofactorauth| Boolean| false|
+
+***Orders***
+|Property Name| Data Type | Default Value
+|--|--|--|
+| receiptid| ObjectID| null|
+| buyerid| ObjectID| null|
+| receiptlink| String| null|
+| totalamount| Float| null|
+| productspurchased| Array of Objects| null|
+
 
 
 ## Application Interface Definition
