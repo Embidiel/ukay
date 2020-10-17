@@ -34,7 +34,7 @@ Ukay is an e-commerce platform that lets you buy and sell used items relation to
 
 ## Data Model  Definition
 
-![enter image description here](https://imgur.com/lRsFgPn.png)
+![enter image description here](https://imgur.com/LuziIb9.png)
 
 > There are 4 primary databases that I shall use in this buyer application. 3 MongoDB Databases and 1 SQL Database. Each database that are shown here shall have a service or a set of services that consumes data from them.
 
