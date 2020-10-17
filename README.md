@@ -34,7 +34,7 @@ Ukay is an e-commerce platform that lets you buy and sell used items relation to
 
 ## Data Model  Definition
 
-![enter image description here](https://imgur.com/hGKt5nw.png)
+![enter image description here](https://imgur.com/lRsFgPn.png)
 
 > There are 4 primary databases that I shall use in this buyer application. 3 MongoDB Databases and 1 SQL Database. Each database that are shown here shall have a service or a set of services that consumes data from them.
 
@@ -65,12 +65,16 @@ If you noticed, I used a SQL Database for managing the Products, Categories, Car
 | contactnumber| String| null|
 | mainphotourl| String| null|
 
+---
+
 ***Settings***
 |Property Name| Data Type | Default Value
 |--|--|--|
 | settingid| ObjectID| null|
 | userid| ObjectID| null|
 | istwofactorauth| Boolean| false|
+
+---
 
 ***Orders***
 |Property Name| Data Type | Default Value
@@ -79,21 +83,59 @@ If you noticed, I used a SQL Database for managing the Products, Categories, Car
 | buyerid| ObjectID| null|
 | receiptlink| String| null|
 | totalamount| Float| null|
+| dateofpurchase| DateTime| Date.now |
 | productspurchased| Array of Objects| null|
+
+---
+
+***PaidProducts***
+|Property Name| Data Type | Default Value
+|--|--|--|
+| paidproductid| ObjectID| null|
+| paymentid| ObjectID| null|
+| productid| Integer| null|
+| buyerid| ObjectID| null|
+| sellerid| ObjectID| null|
+| productname| String| null|
+| producttag| String| null|
+| mainphotourl| String| null|
+| amount| Float| null|
+| payoutstatus| String| `pending`|
+| paymentgateway| String| null|
+| paymentscheme| String| null|
+| dateofpurchase| DateTime| Date.now |
+| amount| Float| null|
+
+---
 
 ***Payments***
 |Property Name| Data Type | Default Value
 |--|--|--|
 | paymentid| ObjectID| null|
 | buyerid| ObjectID| null|
-| seller| Object| null|
 | totalamount| Float| null|
-| productpurchased| Object| null|
+| dateofpurchase| DateTime| Date.now |
+| productpurchased| Array of Objects| null|
 | paymentgateway| String| null|
 | paymentscheme| String| null|
-| payoutstatus| String| null|
 | status| String| null|
 | raw| Object| null|
+
+---
+
+***Payouts***
+|Property Name| Data Type | Default Value
+|--|--|--|
+| payoutid| ObjectID| null|
+| sellerid| ObjectID| null|
+| bankreferenceno| String| null|
+| transactions | Array of Objects| null|
+| servicecharge| Float| null|
+| rawamount | Float| null|
+| netamount | Float| null|
+| payoutstatus| String| `pending`|
+| payoutdate| DateTime| null |
+
 
 
 ## Application Interface Definition
