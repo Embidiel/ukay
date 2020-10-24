@@ -249,10 +249,6 @@ Handles most of the business logic regarding products, brands, categories. This 
 		    producttag: `gucci-bag`,
 		    return: 7,
 		    warranty : 10,
-		    color : {
-			    colorname: `Red`,
-			    shadehex: `#FF0000`
-			},
 		    category: {
 			    categoryname : `Bags`,
 			    categoryimage : `https://google.com/bag1.png`
@@ -272,10 +268,15 @@ Handles most of the business logic regarding products, brands, categories. This 
 		    desc: `Hello world`,
 		    saleprice: 10200,
 		    percentoff: 5,
-		    stocks: 10,
+		    overallstocks: 10,
 		    variations: [
 			    {
 				    productname: "GUCCI Bag Red",
+				    stocks: 10,
+				    color : {
+					    colorname: `Red`,
+					    shadehex: `#FF0000`
+					},
 				    photos: [
 				      `https://google.com/image1.png`,
 					  `https://google.com/img2.jpg`
@@ -284,12 +285,10 @@ Handles most of the business logic regarding products, brands, categories. This 
 					    {
 						  sizename: `Medium`,
 						  sizecode: `M`,
-						  stocks: 5
 					    },
 					    {
 						  sizename: `Large`,
 						  sizecode: `L`,
-						  stocks: 5
 					    }
 					],
 		    ],
