@@ -142,7 +142,7 @@ If you noticed, I used a SQL Database for managing the Products, Categories, Car
 
 ---
 
-![enter image description here](https://imgur.com/m6WCqT0.png)
+![enter image description here](https://imgur.com/LFiwJsm.png)
 
 
 
