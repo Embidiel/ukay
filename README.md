@@ -1,5 +1,11 @@
 # Ukay (Buyer App)
 
+## Table of Contents
+
+ 1. [What?](https://github.com/Embidiel/ukay#what)
+ 2. [Requirements](https://github.com/Embidiel/ukay#requirements-and-goals-of-the-system)
+ 3. [Data Model Definition](https://github.com/Embidiel/ukay#requirements-and-goals-of-the-system)
+ 4. [API Definition](https://github.com/Embidiel/ukay#requirements-and-goals-of-the-system)
 
 ## What?
 Ukay is an e-commerce platform that lets you buy and sell used items relation to fashion.
