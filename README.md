@@ -31,7 +31,7 @@ This is the main inspiration of the home page that we will build for our product
  - [ ] Include *`Colors`* sa sidebar yung parang sa photo number two.
  - [ ] Include *`Body Type`* sa sidebar.
  - [ ] Sort *`Price: Low to High`* and *`Price: High to Low`*
- - [ ] Include *`Size`* sa sidebar, pero yung mga values neto nakadepend sa *`Shopping Category`* and *`Body Type`*
+ - [ ] Include *`Size`* sa sidebar, pero yung mga values neto nakadepend sa *`Shopping Category`* 
  - [ ] Yung Product component dapat same lang din sa Home Page.		
 ![enter image description here](https://cdn.dribbble.com/users/2446071/screenshots/13893056/media/0f58dd2614435fcba84025fc37193018.png)
 
