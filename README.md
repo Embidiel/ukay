@@ -47,6 +47,7 @@ This is the main inspiration of the home page that we will build for our product
  - [ ] Retain yung image gallery ng products sa kaliwa.
  - [ ] `Other Products by` section dagdag natin after nung photo number, ***kung saan madi-display yung ibang items ng seller nung item.***
  - [ ] Sa future dagdag din natin after nung Other products section magkaroon tayo ng `Recommended products section`.
+ - [ ] Sa future dagdag din yung social media share ng product.
 
 ![enter image description here](https://cdn.dribbble.com/users/618212/screenshots/14176331/media/9b8b4bae8db0f1a90234dbd08e3d7675.png)
 
@@ -65,5 +66,9 @@ This is the main inspiration of the home page that we will build for our product
  - [ ] Same sa item shop tapos dagdagan narin ng shop image or logo.
  - [ ] Retain yung checkbox.
  - [ ] Yung 3 dots actions yan pero isang action muna which is delete item from cart.
+ - [ ] Shipping address section lagay narin dito from photo number 2.
+ - [ ] Sa future checkout muna yung button pero in the future parang magiging dropdown na yan kasi magkakaroon tayo ng other gateways.
 
 ![enter image description here](https://cdn.dribbble.com/users/576948/screenshots/10721832/media/578b6fc1126adad3458f14b6b0262eed.png)
+
+![enter image description here](https://cdn.dribbble.com/users/576948/screenshots/10730228/media/49d56402faf38e1ca28aea289484a4d2.png)
