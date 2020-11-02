@@ -72,3 +72,18 @@ This is the main inspiration of the home page that we will build for our product
 ![enter image description here](https://cdn.dribbble.com/users/576948/screenshots/10721832/media/578b6fc1126adad3458f14b6b0262eed.png)
 
 ![enter image description here](https://cdn.dribbble.com/users/576948/screenshots/10730228/media/49d56402faf38e1ca28aea289484a4d2.png)
+
+## User Profile Page
+
+ - [ ] Dagdagan ng `middle name` input field.
+ - [ ] My orders na tab, parang nasa gif. Write a Review magiging `Write a Feedback`. Tapos bawat feedback ay per item dapat.
+ - [ ] Buy again delete.
+ - [ ] Cancel order pwede lang lumitaw kapag `Order placed` palang ang status.
+ - [ ] Write a Feedback lilitaw lang kaapg yung status ay `delivered` na.
+ - [ ] Bawat items naka group yung order by shop.
+ - [ ] Sa baba ng list ng items yung delivery address at contact number.
+ - [ ] Sa settings. On / off slider lang ng Two Factor Authentication.
+
+![enter image description here](https://imgur.com/ZbJmoQY.png)
+
+![enter image description here](https://im7.ezgif.com/tmp/ezgif-7-141d6f65d120.gif)
