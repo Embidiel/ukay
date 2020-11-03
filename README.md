@@ -83,7 +83,10 @@ This is the main inspiration of the home page that we will build for our product
  - [ ] Bawat items naka group yung order by shop.
  - [ ] Sa baba ng list ng items yung delivery address at contact number.
  - [ ] Sa settings. On / off slider lang ng Two Factor Authentication.
+ - [ ] Sa Addresses, gawin nalang na infinite scrolling tapos retain yung design.
 
 ![enter image description here](https://imgur.com/ZbJmoQY.png)
 
 ![enter image description here](https://imgur.com/bId1rHB.gif)
+
+![enter image description here](https://imgur.com/cwQIsFj.png)
