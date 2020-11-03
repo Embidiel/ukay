@@ -86,4 +86,4 @@ This is the main inspiration of the home page that we will build for our product
 
 ![enter image description here](https://imgur.com/ZbJmoQY.png)
 
-![enter image description here](https://im7.ezgif.com/tmp/ezgif-7-141d6f65d120.gif)
+![enter image description here](https://imgur.com/bId1rHB.gif)
