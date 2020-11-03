@@ -90,3 +90,20 @@ This is the main inspiration of the home page that we will build for our product
 ![enter image description here](https://imgur.com/bId1rHB.gif)
 
 ![enter image description here](https://imgur.com/cwQIsFj.png)
+
+## Seller Page
+
+ - [ ] Parang sa Lazada seller page lang pero gawing modern.
+ - [ ] Yung home page may `featured products` nila at may `new products`.
+ - [ ] Sa `home page` ***may advertisement banner rin na pwede up to 3 slides.***
+ - [ ] Cover or header image pwede rin nila palitan.
+ - [ ] Sa `profile tab` nanjan yung feedbacks from mga buyers.
+ - [ ] Sa `profile tab` din nanjan yung physical location nila or address with map pati contact details at contact person.
+ - [ ] Sa `profile tab` rin may `social links` at `description` parang sa picture number 2.
+ - [ ] Yung feedback items naka ***infinite scroll nalang din tapos may sort by ratings na low-high or high-low.***
+ 
+![enter image description here](https://imgur.com/ecx4HUG.png)
+
+![enter image description here](https://imgur.com/9x9XzyZ.png)
+
+![enter image description here](https://cdn.dribbble.com/users/1008661/screenshots/5642510/181203-dribbble.jpg)
